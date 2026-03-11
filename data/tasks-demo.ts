@@ -1,0 +1,260 @@
+export type TaskStatus = "Pending" | "In Progress" | "Review" | "Completed";
+
+export type TaskPriority = "Low" | "Medium" | "High" | "Urgent";
+
+export type TaskDepartment =
+  | "CRM / Leads"
+  | "Design"
+  | "BOQ & Estimation"
+  | "Project Management"
+  | "Procurement"
+  | "Site Execution"
+  | "Installation"
+  | "Finance"
+  | "Handover";
+
+export interface TaskRecord {
+  id: string;
+  title: string;
+  project: string;
+  client: string;
+  assignedTo: string;
+  department: TaskDepartment;
+  priority: TaskPriority;
+  status: TaskStatus;
+  dueDate: string;
+  workflowStage: string;
+  attachments?: string[];
+  notes?: string;
+}
+
+const seedTasks: TaskRecord[] = [
+  {
+    id: "T-2401",
+    title: "Call back Nabil Group about layout options",
+    project: "Banani Corporate Office Fit-out",
+    client: "Nabil Group",
+    assignedTo: "Nusrat Jahan",
+    department: "CRM / Leads",
+    priority: "High",
+    status: "In Progress",
+    dueDate: "2026-03-14",
+    workflowStage: "Lead",
+    attachments: ["lead-brief-nabil.pdf"],
+    notes: "Confirm headcount and final seating plan requirements.",
+  },
+  {
+    id: "T-2402",
+    title: "Site measurement – Dhanmondi apartment",
+    project: "Dhanmondi Apartment Interior",
+    client: "Rafiq Ahmed",
+    assignedTo: "Tanvir Hasan",
+    department: "Project Management",
+    priority: "Urgent",
+    status: "Pending",
+    dueDate: "2026-03-13",
+    workflowStage: "Site Visit",
+    attachments: ["site-checklist-template.xlsx"],
+    notes: "Capture ceiling drops and existing electrical points.",
+  },
+  {
+    id: "T-2403",
+    title: "3D concept for Gulshan showroom feature wall",
+    project: "Gulshan Showroom Renovation",
+    client: "Bengal Workspace Ltd",
+    assignedTo: "Fahim Reza",
+    department: "Design",
+    priority: "High",
+    status: "In Progress",
+    dueDate: "2026-03-17",
+    workflowStage: "Design",
+    attachments: ["brand-guidelines-bengal.pdf"],
+    notes: "Incorporate brand blue and warm oak finishes.",
+  },
+  {
+    id: "T-2404",
+    title: "Prepare BOQ for Lakeshore Café seating area",
+    project: "Uttara Restaurant Interior",
+    client: "Lakeshore Café",
+    assignedTo: "Mehedi Islam",
+    department: "BOQ & Estimation",
+    priority: "High",
+    status: "Review",
+    dueDate: "2026-03-15",
+    workflowStage: "BOQ Estimate",
+    attachments: ["boq-lakeshore-draft.xlsx"],
+    notes: "Cross-check laminate codes and chair counts.",
+  },
+  {
+    id: "T-2405",
+    title: "Issue revised quotation after value engineering",
+    project: "Banani Corporate Office Fit-out",
+    client: "Nabil Group",
+    assignedTo: "Sharif Uddin",
+    department: "Finance",
+    priority: "Medium",
+    status: "Pending",
+    dueDate: "2026-03-18",
+    workflowStage: "Quotation",
+    attachments: ["quotation-revision-int-2401.pdf"],
+    notes: "Reflect savings from alternate light fittings.",
+  },
+  {
+    id: "T-2406",
+    title: "Client approval meeting – Banani corporate office",
+    project: "Banani Corporate Office Fit-out",
+    client: "Nabil Group",
+    assignedTo: "Arif Hossain",
+    department: "Project Management",
+    priority: "High",
+    status: "Pending",
+    dueDate: "2026-03-20",
+    workflowStage: "Client Approval",
+    notes: "Confirm final scope freeze and payment milestones.",
+  },
+  {
+    id: "T-2407",
+    title: "Raise PO for MDF boards – INT-2403",
+    project: "Gulshan Showroom Renovation",
+    client: "Bengal Workspace Ltd",
+    assignedTo: "Mehedi Islam",
+    department: "Procurement",
+    priority: "Urgent",
+    status: "In Progress",
+    dueDate: "2026-03-12",
+    workflowStage: "Procurement",
+    attachments: ["mdf-spec-18mm.pdf"],
+    notes: "Tag delivery to Gulshan site and workshop split.",
+  },
+  {
+    id: "T-2408",
+    title: "Schedule Bismillah Carpentry Team for partition works",
+    project: "Bashundhara Executive Office",
+    client: "Rahman Holdings",
+    assignedTo: "Tanvir Hasan",
+    department: "Site Execution",
+    priority: "Medium",
+    status: "Pending",
+    dueDate: "2026-03-19",
+    workflowStage: "Execution",
+    notes: "Share latest drawing set before mobilisation.",
+  },
+  {
+    id: "T-2409",
+    title: "Install track lights at Gulshan showroom",
+    project: "Gulshan Showroom Renovation",
+    client: "Bengal Workspace Ltd",
+    assignedTo: "Prime Electrical Works",
+    department: "Installation",
+    priority: "High",
+    status: "In Progress",
+    dueDate: "2026-03-16",
+    workflowStage: "Installation",
+    notes: "Coordinate with Metro Glass to avoid clash with glass panels.",
+  },
+  {
+    id: "T-2410",
+    title: "Prepare final handover pack – Uttara restaurant",
+    project: "Uttara Restaurant Interior",
+    client: "Lakeshore Café",
+    assignedTo: "Arif Hossain",
+    department: "Handover",
+    priority: "Medium",
+    status: "Pending",
+    dueDate: "2026-03-25",
+    workflowStage: "Handover",
+    attachments: ["as-built-drawings.zip", "warranty-cards.pdf"],
+  },
+];
+
+const autoGeneratedTasks: TaskRecord[] = Array.from({ length: 70 }).map(
+  (_, index) => {
+    const seq = index + 11;
+    const priorities: TaskPriority[] = ["Low", "Medium", "High", "Urgent"];
+    const statuses: TaskStatus[] = [
+      "Pending",
+      "In Progress",
+      "Review",
+      "Completed",
+    ];
+    const departments: TaskDepartment[] = [
+      "CRM / Leads",
+      "Design",
+      "BOQ & Estimation",
+      "Project Management",
+      "Procurement",
+      "Site Execution",
+      "Installation",
+      "Finance",
+      "Handover",
+    ];
+
+    const priority = priorities[seq % priorities.length];
+    const status = statuses[seq % statuses.length];
+    const department = departments[seq % departments.length];
+
+    const projectPool = [
+      "Banani Corporate Office Fit-out",
+      "Dhanmondi Apartment Interior",
+      "Gulshan Showroom Renovation",
+      "Uttara Restaurant Interior",
+      "Bashundhara Executive Office",
+      "Mirpur Studio Apartment Interior",
+      "Chattogram Retail Display Project",
+    ];
+
+    const clientPool = [
+      "Nabil Group",
+      "Rafiq Ahmed",
+      "Bengal Workspace Ltd",
+      "Lakeshore Café",
+      "Rahman Holdings",
+      "Urban Edge Properties",
+      "Tasnia Karim",
+    ];
+
+    const assigneePool = [
+      "Arif Hossain",
+      "Tanvir Hasan",
+      "Mehedi Islam",
+      "Nusrat Jahan",
+      "Sharif Uddin",
+      "Fahim Reza",
+    ];
+
+    const workflowPool = [
+      "Lead",
+      "Site Visit",
+      "Design",
+      "BOQ Estimate",
+      "Quotation",
+      "Client Approval",
+      "Execution",
+      "Procurement",
+      "Installation",
+      "Billing",
+      "Handover",
+    ];
+
+    return {
+      id: `T-24${seq.toString().padStart(2, "0")}`,
+      title: `Follow-up task ${seq} for interior workflow`,
+      project: projectPool[seq % projectPool.length],
+      client: clientPool[seq % clientPool.length],
+      assignedTo: assigneePool[seq % assigneePool.length],
+      department,
+      priority,
+      status,
+      dueDate: `2026-03-${(10 + (seq % 20)).toString().padStart(2, "0")}`,
+      workflowStage: workflowPool[seq % workflowPool.length],
+      notes: "Demo task generated for reporting and dashboard purposes.",
+    };
+  },
+);
+
+export const tasksDemo: TaskRecord[] = [...seedTasks, ...autoGeneratedTasks];
+
+export const recentTasks = tasksDemo
+  .slice(0, 12)
+  .sort((a, b) => (a.dueDate < b.dueDate ? 1 : -1));
+
