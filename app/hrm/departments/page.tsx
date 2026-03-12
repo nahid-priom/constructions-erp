@@ -43,7 +43,7 @@ const departments: Department[] = [
 
 export default function DepartmentsPage() {
   return (
-    <div className="w-full space-y-6 lg:space-y-8">
+    <div className="w-full max-w-full space-y-6 overflow-x-hidden lg:space-y-8">
       <PageHeader
         title="Departments"
         description="Organisational departments overseeing projects, finance, HR, and regional site operations."

@@ -48,7 +48,7 @@ export default function ProjectCodesPage() {
   const planned = projectCodes.filter((p) => p.status === "Under Plan").length
 
   return (
-    <div className="w-full space-y-6 lg:space-y-8">
+    <div className="w-full max-w-full space-y-6 overflow-x-hidden lg:space-y-8">
       <PageHeader
         title="PROJECT CODES"
         description="Master register of project codes with locations and current status."

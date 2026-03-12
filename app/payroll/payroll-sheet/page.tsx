@@ -61,13 +61,13 @@ export default function PayrollSheetPage() {
   const totalNet = payrollSheet.reduce((sum, row) => sum + row.netPayable, 0)
 
   return (
-    <div className="w-full space-y-6 lg:space-y-8">
+    <div className="w-full max-w-full space-y-6 overflow-x-hidden lg:space-y-8">
       <PageHeader
         title="PAYROLL SHEET"
         description="Month-end payroll sheet linked with manpower attendance and project codes."
       />
 
-      <section className="grid w-full gap-4 md:grid-cols-2 xl:grid-cols-4">
+      <section className="grid w-full min-w-0 gap-4 md:grid-cols-2 xl:grid-cols-4">
         <StatCard
           label="Total Net Payable"
           value={totalNet.toLocaleString("en-BD", {

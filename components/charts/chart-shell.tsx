@@ -6,7 +6,7 @@ interface ChartShellProps {
 
 export function ChartShell({ children }: ChartShellProps) {
   return (
-    <div className="flex h-64 flex-col justify-between gap-4 md:h-72">
+    <div className="flex min-h-[220px] flex-col justify-between gap-4 sm:min-h-[260px] md:min-h-[280px]">
       {children}
     </div>
   );

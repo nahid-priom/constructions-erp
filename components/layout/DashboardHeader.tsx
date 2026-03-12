@@ -20,8 +20,8 @@ export function DashboardHeader({ name = "Arif Hossain" }: DashboardHeaderProps)
   const todayLabel = "Monday, 11 November 2025";
 
   return (
-    <header className="flex items-center justify-between gap-4">
-      <div>
+    <header className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+      <div className="space-y-1">
         <p className="text-xs font-medium uppercase tracking-wide text-neutral-500">
           Welcome {name}
         </p>
@@ -30,7 +30,7 @@ export function DashboardHeader({ name = "Arif Hossain" }: DashboardHeaderProps)
         </h1>
       </div>
 
-      <div className="flex items-center gap-3">
+      <div className="flex flex-wrap items-center gap-2 sm:justify-end">
         <Button
           variant="outline"
           size="sm"

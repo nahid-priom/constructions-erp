@@ -230,7 +230,7 @@ export default function PaymentVoucherPage() {
   const showDeleteAsApproval = moduleActions.deleteMode === "approval";
 
   return (
-    <div className="w-full space-y-6 lg:space-y-8">
+    <div className="w-full max-w-full space-y-6 overflow-x-hidden lg:space-y-8">
       <PageHeader
         title="Payment Voucher Register"
         description="Construction site-wise payment vouchers for subcontractors, suppliers, and services."
@@ -256,7 +256,7 @@ export default function PaymentVoucherPage() {
         }
       />
 
-      <section className="grid w-full gap-4 md:grid-cols-2 xl:grid-cols-4">
+      <section className="grid w-full min-w-0 gap-4 md:grid-cols-2 xl:grid-cols-4">
         <StatCard
           label="Total Voucher Value (Filtered)"
           value={totalAmount.toLocaleString("en-BD", {
@@ -349,7 +349,7 @@ export default function PaymentVoucherPage() {
       </FilterBar>
 
       <section className="grid gap-4 lg:grid-cols-12">
-        <div className="lg:col-span-8">
+        <div className="lg:col-span-8 lg:min-w-0">
           <SimpleTable
             columns={[
               {
@@ -429,7 +429,7 @@ export default function PaymentVoucherPage() {
           />
         </div>
 
-        <div className="space-y-4 lg:col-span-4">
+        <div className="space-y-4 lg:col-span-4 lg:min-w-0">
           {selectedVoucher && (
             <Card>
               <CardHeader>

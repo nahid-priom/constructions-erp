@@ -19,7 +19,7 @@ export function PageHeader({ title, description, meta }: PageHeaderProps) {
           </p>
         )}
       </div>
-      {meta && <div className="mt-2 sm:mt-0">{meta}</div>}
+      {meta && <div className="mt-2 w-full sm:mt-0 sm:w-auto">{meta}</div>}
     </header>
   );
 }

@@ -42,42 +42,42 @@ export default function ProjectInformationPage() {
         description="Key details of running and planned construction projects."
       />
 
-      <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+      <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {projects.map((project) => (
-          <Card key={project.code}>
-            <CardHeader>
-              <CardTitle className="text-sm font-semibold">
+          <Card key={project.code} className="h-full">
+            <CardHeader className="pb-3">
+              <CardTitle className="text-sm font-semibold leading-snug">
                 {project.code} – {project.name}
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-1.5 text-xs">
-              <div className="flex items-center justify-between">
-                <span className="text-slate-500">Client</span>
-                <span className="font-semibold text-slate-900">
+            <CardContent className="space-y-2 text-xs">
+              <div className="flex items-start justify-between gap-2">
+                <span className="shrink-0 text-slate-500">Client</span>
+                <span className="text-right font-semibold text-slate-900">
                   {project.client}
                 </span>
               </div>
-              <div className="flex items-center justify-between">
-                <span className="text-slate-500">Location</span>
-                <span className="font-semibold text-slate-900">
+              <div className="flex items-start justify-between gap-2">
+                <span className="shrink-0 text-slate-500">Location</span>
+                <span className="text-right font-semibold text-slate-900">
                   {project.location}
                 </span>
               </div>
-              <div className="flex items-center justify-between">
-                <span className="text-slate-500">Type</span>
-                <span className="font-semibold text-slate-900">
+              <div className="flex items-start justify-between gap-2">
+                <span className="shrink-0 text-slate-500">Type</span>
+                <span className="text-right font-semibold text-slate-900">
                   {project.type}
                 </span>
               </div>
-              <div className="flex items-center justify-between">
-                <span className="text-slate-500">Duration</span>
-                <span className="font-semibold text-slate-900">
+              <div className="flex items-start justify-between gap-2">
+                <span className="shrink-0 text-slate-500">Duration</span>
+                <span className="text-right font-semibold text-slate-900">
                   {project.startDate} → {project.endDate}
                 </span>
               </div>
-              <div className="flex items-center justify-between">
-                <span className="text-slate-500">Status</span>
-                <span className="font-semibold text-slate-900">
+              <div className="flex items-start justify-between gap-2">
+                <span className="shrink-0 text-slate-500">Status</span>
+                <span className="text-right font-semibold text-slate-900">
                   {project.status}
                 </span>
               </div>

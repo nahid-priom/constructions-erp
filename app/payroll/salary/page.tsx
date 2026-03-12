@@ -82,13 +82,13 @@ export default function PayrollSalaryPage() {
   )
 
   return (
-    <div className="w-full space-y-6 lg:space-y-8">
+    <div className="w-full max-w-full space-y-6 overflow-x-hidden lg:space-y-8">
       <PageHeader
         title="PAYROLL – SALARY STRUCTURE"
         description="Breakdown of salary components against project codes for key staff."
       />
 
-      <section className="grid w-full gap-4 md:grid-cols-2 xl:grid-cols-4">
+      <section className="grid w-full min-w-0 gap-4 md:grid-cols-2 xl:grid-cols-4">
         <StatCard
           label="Total Monthly Payroll"
           value={totalMonthly.toLocaleString("en-BD", {

@@ -84,13 +84,13 @@ export default function AgreementsContractsPage() {
   const underPlan = agreements.filter((row) => row.status === "Under Plan").length
 
   return (
-    <div className="w-full space-y-6 lg:space-y-8">
+    <div className="w-full max-w-full space-y-6 overflow-x-hidden lg:space-y-8">
       <PageHeader
         title="AGREEMENTS & CONTRACTS"
         description="Register of project-wise agreements, contracts, work orders, and purchase orders."
       />
 
-      <section className="grid w-full gap-4 md:grid-cols-2 xl:grid-cols-4">
+      <section className="grid w-full min-w-0 gap-4 md:grid-cols-2 xl:grid-cols-4">
         <StatCard
           label="Total Contract Value"
           value={totalValue.toLocaleString("en-BD", {

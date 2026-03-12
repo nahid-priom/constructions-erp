@@ -34,7 +34,7 @@ const idCards: IdCard[] = [
 
 export default function EmployeeIdCardsPage() {
   return (
-    <div className="w-full space-y-6 lg:space-y-8">
+    <div className="w-full max-w-full space-y-6 overflow-x-hidden lg:space-y-8">
       <PageHeader
         title="Employee ID Cards"
         description="Professional ID card layout with company branding for printing."

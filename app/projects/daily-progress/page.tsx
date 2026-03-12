@@ -38,7 +38,7 @@ const dailyProgress: DailyProgressRow[] = [
 
 export default function DailyProgressPage() {
   return (
-    <div className="w-full space-y-6 lg:space-y-8">
+    <div className="w-full max-w-full space-y-6 overflow-x-hidden lg:space-y-8">
       <PageHeader
         title="DAILY PROGRESS"
         description="Day-wise progress log by project code and task name."

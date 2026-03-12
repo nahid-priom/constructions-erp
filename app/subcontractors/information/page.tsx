@@ -45,7 +45,7 @@ export default function SubcontractorInformationPage() {
   const totalDue = totalBilled - totalPaid
 
   return (
-    <div className="w-full space-y-6 lg:space-y-8">
+    <div className="w-full max-w-full space-y-6 overflow-x-hidden lg:space-y-8">
       <PageHeader
         title="SUB-CONTRACTOR INFORMATION"
         description="Master list of subcontractors with contact, work type, and billing summary."

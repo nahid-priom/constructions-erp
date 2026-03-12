@@ -180,7 +180,7 @@ export default function AnalyticsPage() {
   );
 
   return (
-    <div className="w-full space-y-6 lg:space-y-8">
+    <div className="w-full max-w-full space-y-6 overflow-x-hidden lg:space-y-8">
       <PageHeader
         title="Analytics Overview"
         description="Revenue, cost, manpower, and project performance analytics across all running sites."
@@ -204,7 +204,7 @@ export default function AnalyticsPage() {
             </Tabs>
             <Input
               placeholder="Filter by project or client"
-              className="h-8 w-40 rounded-full bg-muted text-xs md:w-56"
+              className="h-8 w-full min-w-0 rounded-full bg-muted text-xs sm:w-40 md:w-56"
             />
             <Button
               size="sm"
@@ -219,7 +219,7 @@ export default function AnalyticsPage() {
         }
       />
 
-      <section className="grid w-full gap-4 md:grid-cols-2 xl:grid-cols-4">
+      <section className="grid w-full min-w-0 gap-4 md:grid-cols-2 xl:grid-cols-4">
         <StatCard
           label="Revenue Trend (Last 5 Months)"
           value={`${totalRevenue.toFixed(1)} Cr`}
@@ -262,8 +262,8 @@ export default function AnalyticsPage() {
         />
       </section>
 
-      <section className="grid w-full gap-4 lg:grid-cols-12">
-        <div className="space-y-4 lg:col-span-8">
+      <section className="grid w-full min-w-0 gap-4 lg:grid-cols-12">
+        <div className="space-y-4 lg:col-span-8 lg:min-w-0">
           <DataTableCard
             title="Revenue & Expense Trend"
             description="Month-wise revenue, expense, and margin profile."
@@ -283,13 +283,13 @@ export default function AnalyticsPage() {
                 <td className="whitespace-nowrap py-2.5 pr-4 text-sm text-foreground/90">
                   {row.month}
                 </td>
-                <td className="whitespace-nowrap py-2.5 pr-4 text-sm text-foreground/90">
+                <td className="py-2.5 pr-4 text-sm text-foreground/90">
                   {row.revenue.toFixed(1)}
                 </td>
-                <td className="whitespace-nowrap py-2.5 pr-4 text-sm text-foreground/90">
+                <td className="py-2.5 pr-4 text-sm text-foreground/90">
                   {row.expense.toFixed(1)}
                 </td>
-                <td className="w-52 py-2.5 align-top">
+                <td className="py-2.5 align-top min-w-0">
                   <div className="flex flex-col gap-1">
                     <div className="flex items-center justify-between text-xs">
                       <span>{row.margin}%</span>
@@ -323,7 +323,7 @@ export default function AnalyticsPage() {
                     </span>
                   </div>
                 </td>
-                <td className="w-52 py-2.5 pr-4 align-top">
+                <td className="py-2.5 pr-4 align-top min-w-0">
                   <div className="flex flex-col gap-1">
                     <div className="flex items-center justify-between text-xs">
                       <span>Physical</span>
@@ -339,7 +339,7 @@ export default function AnalyticsPage() {
                     </div>
                   </div>
                 </td>
-                <td className="whitespace-nowrap py-2.5 align-top">
+                <td className="py-2.5 align-top">
                   <StatusBadge status={row.status} />
                 </td>
               </tr>
@@ -347,7 +347,7 @@ export default function AnalyticsPage() {
           </DataTableCard>
         </div>
 
-        <div className="space-y-4 lg:col-span-4">
+        <div className="space-y-4 lg:col-span-4 lg:min-w-0">
           <ChartCard
             title="Project Status Mix"
             description="Running, completed, and planned share of portfolio."

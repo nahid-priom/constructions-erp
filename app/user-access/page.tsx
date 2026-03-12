@@ -69,7 +69,7 @@ export default function UserAccessPage() {
   const [selected, setSelected] = useState<UserAccessRow | null>(users[0])
 
   return (
-    <div className="w-full space-y-6 lg:space-y-8">
+    <div className="w-full max-w-full space-y-6 overflow-x-hidden lg:space-y-8">
       <PageHeader
         title="User Access Control"
         description="Manage ERP user profiles, office IDs, and access status across departments."
@@ -102,7 +102,7 @@ export default function UserAccessPage() {
       </FilterBar>
 
       <section className="grid gap-4 lg:grid-cols-12">
-        <div className="lg:col-span-8">
+        <div className="lg:col-span-8 lg:min-w-0">
           <SimpleTable
             columns={[
               {
@@ -194,7 +194,7 @@ export default function UserAccessPage() {
           />
         </div>
 
-        <div className="lg:col-span-4">
+        <div className="lg:col-span-4 lg:min-w-0">
           <Card>
             <CardHeader>
               <CardTitle className="text-sm font-semibold">

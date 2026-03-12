@@ -42,7 +42,7 @@ export function DataTableWrapper({
           {toolbar}
         </div>
       )}
-      <div className="overflow-x-auto">
+      <div className="w-full overflow-x-auto">
         {children}
       </div>
     </Card>

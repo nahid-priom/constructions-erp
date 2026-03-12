@@ -55,7 +55,7 @@ const manpowerAttendance: ManpowerAttendanceRow[] = [
 
 export default function ManpowerAttendancePage() {
   return (
-    <div className="w-full space-y-6 lg:space-y-8">
+    <div className="w-full max-w-full space-y-6 overflow-x-hidden lg:space-y-8">
       <PageHeader
         title="Manpower Attendance"
         description="Project-wise manpower presence by role for daily monitoring and billing."

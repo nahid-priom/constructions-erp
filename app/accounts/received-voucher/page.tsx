@@ -45,13 +45,13 @@ export default function ReceivedVoucherPage() {
   const totalReceived = received.reduce((sum, r) => sum + r.amount, 0)
 
   return (
-    <div className="w-full space-y-6 lg:space-y-8">
+    <div className="w-full max-w-full space-y-6 overflow-x-hidden lg:space-y-8">
       <PageHeader
         title="Received Voucher Register"
         description="Client-wise money received records with project mapping and payment methods."
       />
 
-      <section className="grid w-full gap-4 md:grid-cols-2 xl:grid-cols-4">
+      <section className="grid w-full min-w-0 gap-4 md:grid-cols-2 xl:grid-cols-4">
         <StatCard
           label="Total Collections (This Week)"
           value={totalReceived.toLocaleString("en-BD", {
@@ -103,7 +103,7 @@ export default function ReceivedVoucherPage() {
       </FilterBar>
 
       <section className="grid gap-4 lg:grid-cols-12">
-        <div className="lg:col-span-8">
+        <div className="lg:col-span-8 lg:min-w-0">
           <SimpleTable
             columns={[
               {
@@ -166,7 +166,7 @@ export default function ReceivedVoucherPage() {
           />
         </div>
 
-        <div className="space-y-4 lg:col-span-4">
+        <div className="space-y-4 lg:col-span-4 lg:min-w-0">
           <Card>
             <CardHeader>
               <CardTitle className="text-sm font-semibold">

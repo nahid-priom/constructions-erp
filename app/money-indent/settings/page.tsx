@@ -34,7 +34,7 @@ const indentCategories: IndentCategoryRow[] = [
 
 export default function MoneyIndentSettingsPage() {
   return (
-    <div className="w-full space-y-6 lg:space-y-8">
+    <div className="w-full max-w-full space-y-6 overflow-x-hidden lg:space-y-8">
       <PageHeader
         title="MONEY INDENT – SETTINGS"
         description="Configuration of money indent categories, approval statuses, and control rules."

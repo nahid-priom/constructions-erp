@@ -38,7 +38,7 @@ export default function SubcontractorDailyExpensePage() {
   const total = dailyExpenses.reduce((sum, row) => sum + row.amount, 0)
 
   return (
-    <div className="w-full space-y-6 lg:space-y-8">
+    <div className="w-full max-w-full space-y-6 overflow-x-hidden lg:space-y-8">
       <PageHeader
         title="SUB-CONTRACTOR DAILY EXPENSE"
         description="Daily expense log raised by subcontractors against running projects."

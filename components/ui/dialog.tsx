@@ -84,7 +84,8 @@ export const DialogContent = React.forwardRef<
         role="dialog"
         aria-modal="true"
         className={cn(
-          "fixed left-[50%] top-[50%] z-50 w-full max-w-lg -translate-x-1/2 -translate-y-1/2 rounded-xl border border-neutral-200 bg-white shadow-sm dark:border-neutral-800 dark:bg-neutral-900",
+          "fixed left-1/2 top-1/2 z-50 w-full max-w-lg -translate-x-1/2 -translate-y-1/2 rounded-xl border border-neutral-200 bg-white shadow-sm dark:border-neutral-800 dark:bg-neutral-900",
+          "max-h-[90vh] overflow-y-auto p-4 sm:p-5",
           className,
         )}
         onClick={(e) => e.stopPropagation()}

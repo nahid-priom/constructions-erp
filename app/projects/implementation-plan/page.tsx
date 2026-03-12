@@ -64,7 +64,7 @@ const implementationPlan: PlanRow[] = [
 
 export default function ImplementationPlanPage() {
   return (
-    <div className="w-full space-y-6 lg:space-y-8">
+    <div className="w-full max-w-full space-y-6 overflow-x-hidden lg:space-y-8">
       <PageHeader
         title="IMPLEMENTATION PLAN"
         description="Work breakdown with assigned site team and man‑day plan for DU-0001."

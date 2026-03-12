@@ -76,13 +76,13 @@ export default function JournalBillPage() {
   const totalBills = bills.reduce((sum, b) => sum + b.amount, 0)
 
   return (
-    <div className="w-full space-y-6 lg:space-y-8">
+    <div className="w-full max-w-full space-y-6 overflow-x-hidden lg:space-y-8">
       <PageHeader
         title="Journal & Bill Register"
         description="Project-wise journal entries with linked bills and posting status."
       />
 
-      <section className="grid w-full gap-4 md:grid-cols-2 xl:grid-cols-4">
+      <section className="grid w-full min-w-0 gap-4 md:grid-cols-2 xl:grid-cols-4">
         <StatCard
           label="Total Journal Amount"
           value={totalDebit.toLocaleString("en-BD", {
@@ -135,7 +135,7 @@ export default function JournalBillPage() {
       </FilterBar>
 
       <section className="grid gap-4 lg:grid-cols-12">
-        <div className="space-y-4 lg:col-span-7">
+        <div className="space-y-4 lg:col-span-7 lg:min-w-0">
           <Card>
             <CardHeader>
               <CardTitle className="text-sm font-semibold">
@@ -208,7 +208,7 @@ export default function JournalBillPage() {
           </Card>
         </div>
 
-        <div className="space-y-4 lg:col-span-5">
+        <div className="space-y-4 lg:col-span-5 lg:min-w-0">
           <Card>
             <CardHeader>
               <CardTitle className="text-sm font-semibold">

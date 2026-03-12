@@ -53,7 +53,7 @@ export default function AllProjectsPage() {
   const planned = projects.filter((p) => p.status === "Under Plan").length
 
   return (
-    <div className="w-full space-y-6 lg:space-y-8">
+    <div className="w-full max-w-full space-y-6 overflow-x-hidden lg:space-y-8">
       <PageHeader
         title="ALL PROJECTS"
         description="Consolidated view of all construction projects with codes, clients, and locations."

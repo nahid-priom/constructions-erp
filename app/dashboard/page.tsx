@@ -207,7 +207,7 @@ export default function DashboardPage() {
   });
 
   return (
-    <div className="w-full space-y-6 lg:space-y-8">
+    <div className="w-full max-w-full space-y-6 overflow-x-hidden lg:space-y-8">
       <PageHeader
         title="Executive Dashboard"
         description="Project performance, collections, and site operations across the full construction portfolio."
@@ -242,7 +242,7 @@ export default function DashboardPage() {
         }
       />
 
-      <section className="grid w-full gap-4 md:grid-cols-2 xl:grid-cols-4">
+      <section className="grid w-full min-w-0 gap-4 md:grid-cols-2 xl:grid-cols-4">
         <StatCard
           label="Pending Payments"
           value={pendingPayments.toLocaleString("en-BD", {
@@ -282,8 +282,8 @@ export default function DashboardPage() {
         />
       </section>
 
-      <section className="grid w-full gap-4 lg:grid-cols-12">
-        <div className="space-y-4 lg:col-span-8">
+      <section className="grid w-full min-w-0 gap-4 lg:grid-cols-12">
+        <div className="space-y-4 lg:col-span-8 lg:min-w-0">
           <DataTableCard
             title="Running Projects"
             description="Live overview of priority sites and responsible engineers."
@@ -295,15 +295,15 @@ export default function DashboardPage() {
               "Status",
             ]}
             toolbar={
-              <div className="flex items-center gap-2">
+              <div className="flex min-w-0 flex-wrap items-center gap-2 sm:flex-nowrap">
                 <Input
                   placeholder="Search by project or code"
-                  className="h-8 w-40 rounded-full bg-muted text-xs md:w-56"
+                  className="h-8 w-full min-w-0 rounded-full bg-muted text-xs sm:w-40 md:w-56"
                 />
                 <Button
                   size="sm"
                   variant="outline"
-                  className="h-8 rounded-full px-3 text-[11px]"
+                  className="h-8 shrink-0 rounded-full px-3 text-[11px]"
                 >
                   View all
                 </Button>
@@ -322,13 +322,13 @@ export default function DashboardPage() {
                     </span>
                   </div>
                 </td>
-                <td className="whitespace-nowrap py-2.5 pr-4 align-top text-sm text-foreground/90">
+                <td className="py-2.5 pr-4 align-top text-sm text-foreground/90">
                   {row.location}
                 </td>
-                <td className="whitespace-nowrap py-2.5 pr-4 align-top text-sm text-foreground/90">
+                <td className="py-2.5 pr-4 align-top text-sm text-foreground/90">
                   {row.manager}
                 </td>
-                <td className="w-56 py-2.5 pr-4 align-top">
+                <td className="py-2.5 pr-4 align-top min-w-0">
                   <div className="flex flex-col gap-1">
                     <div className="flex items-center justify-between text-xs">
                       <span className="text-muted-foreground">Overall</span>
@@ -344,7 +344,7 @@ export default function DashboardPage() {
                     </div>
                   </div>
                 </td>
-                <td className="whitespace-nowrap py-2.5 align-top">
+                <td className="py-2.5 align-top">
                   <StatusBadge status={row.status} />
                 </td>
               </tr>
@@ -384,7 +384,7 @@ export default function DashboardPage() {
           </section>
         </div>
 
-        <div className="space-y-4 lg:col-span-4">
+        <div className="space-y-4 lg:col-span-4 lg:min-w-0">
           <SectionCard
             title="Project Location Distribution"
             description="Where current projects are concentrated."
